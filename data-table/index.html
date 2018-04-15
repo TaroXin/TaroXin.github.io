@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="./css/layui.css">
+    <style>
+        html, body{
+            margin: 0;
+            padding: 0;
+        }
+        #canvas{
+            display: block;
+            width: 860px;
+            height: 860px;
+            margin: 30px auto;
+            background-color: #FFF;
+        }
+        #form-container{
+            width: 860px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    
+    <canvas id = "canvas"></canvas>
+
+    <div id="form-container">
+        <fieldset class="layui-elem-field layui-field-title" style="margin-top: 50px;">
+            <legend>图表相关操作</legend>
+        </fieldset>
+        <form class="layui-form " action="">
+
+            <div class="layui-form-item">
+                <label class="layui-form-label">显示网格</label>
+                <div class="layui-input-block">
+                    <input type="checkbox" checked="" name="gridSwitch" lay-skin="switch" title="开关" lay-text="ON|OFF" lay-filter="gridSwitch">
+                </div>
+            </div>
+
+            <div class="layui-form-item">
+                <label class="layui-form-label">显示刻度</label>
+                <div class="layui-input-block">
+                    <input type="checkbox" checked="" name="tickSwitch" lay-skin="switch" title="开关" lay-text="ON|OFF" lay-filter="tickSwitch">
+                </div>
+            </div>
+
+            <div class="layui-form-item">
+                <label class="layui-form-label">刻度线颜色</label>
+                <div class="layui-input-block">
+                    <input type="text" name="tickColor" id="tickColor" autocomplete="off" placeholder="请输入刻度线颜色，例如#FF0000,red" class="layui-input" onchange="onTickColorChange()">
+                </div>
+            </div>
+
+            <div class="layui-form-item">
+                <label class="layui-form-label">坐标轴颜色</label>
+                <div class="layui-input-block">
+                    <input type="text" name="lineColor" id="lineColor" autocomplete="off" placeholder="请输入坐标轴颜色，例如#FF0000,red" class="layui-input" onchange="onLineColorChange()">
+                </div>
+            </div>
+
+            <div class="layui-form-item">
+                <label class="layui-form-label">折线颜色</label>
+                <div class="layui-input-block">
+                    <input type="text" name="pointColor" id="pointColor" autocomplete="off" placeholder="请输入数据折线颜色，例如#FF0000,red" class="layui-input" onchange="onPointColorChange()">
+                </div>
+            </div>
+
+            <div class="layui-form-item">
+                <label class="layui-form-label">X轴字体</label>
+                <div class="layui-input-block">
+                    <input type="text" name="xLabel" id="xLabel" autocomplete="off" placeholder="请输入X轴字体，默认文字是X轴字体" class="layui-input" onchange="onLineLabelChange('x')">
+                </div>
+            </div>
+
+            <div class="layui-form-item">
+                <label class="layui-form-label">Y轴字体</label>
+                <div class="layui-input-block">
+                    <input type="text" name="yLabel" id="yLabel" autocomplete="off" placeholder="请输入Y轴字体，默认文字是Y轴字体" class="layui-input" onchange="onLineLabelChange('y')">
+                </div>
+            </div>
+
+            <div class="layui-form-item">
+                <label class="layui-form-label">显示轴字体</label>
+                <div class="layui-input-block">
+                    <input type="checkbox" checked="" name="lineLabelSwitch" lay-skin="switch" title="开关" lay-text="ON|OFF" lay-filter="lineLabelSwitch">
+                </div>
+            </div>
+
+            <div class="layui-form-item">
+ 
+                <div class="layui-inline">
+                    <label class="layui-form-label">X轴范围</label>
+                    <div class="layui-input-inline" style="width: 100px;">
+                        <input type="number" name="x_tick_min" autocomplete="off" class="layui-input" value="0" disabled>
+                    </div>
+                    <div class="layui-form-mid">-</div>
+                    <div class="layui-input-inline" style="width: 100px;">
+                        <input type="number" name="x_tick_max" id="x_tick_max" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                
+                <div class="layui-inline">
+                    <label class="layui-form-label">分段</label>
+                    <div class="layui-input-inline" style="width: 100px;">
+                        <input type="number" name="x_tick_split" id="x_tick_split" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+
+                <div class="layui-inline">
+                    <div class="layui-input-inline" style="width: 100px;">
+                        <button type="button" class="layui-btn layui-btn-sm layui-btn-normal" onclick="onChangeTick('x')">
+                            <i class="layui-icon">&#x1002;</i>
+                        </button>
+                    </div>
+                </div>
+                    
+            </div>
+
+            <div class="layui-form-item">
+ 
+                <div class="layui-inline">
+                    <label class="layui-form-label">Y轴范围</label>
+                    <div class="layui-input-inline" style="width: 100px;">
+                        <input type="number" name="y_tick_min" autocomplete="off" class="layui-input" value="0" disabled>
+                    </div>
+                    <div class="layui-form-mid">-</div>
+                    <div class="layui-input-inline" style="width: 100px;">
+                        <input type="number" name="y_tick_max" id="y_tick_max" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                
+                <div class="layui-inline">
+                    <label class="layui-form-label">分段</label>
+                    <div class="layui-input-inline" style="width: 100px;">
+                        <input type="number" name="y_tick_split" id="y_tick_split" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+
+                <div class="layui-inline">
+                    <div class="layui-input-inline" style="width: 100px;">
+                        <button type="button" class="layui-btn layui-btn-sm layui-btn-normal" onclick="onChangeTick('y')">
+                            <i class="layui-icon">&#x1002;</i>
+                        </button>
+                    </div>
+                </div>
+                    
+            </div>
+
+            <div class="layui-form-item layui-form-text">
+                <label class="layui-form-label">上层数据</label>
+                <div class="layui-input-block">
+                    <textarea placeholder="输入格式 X1-Y1 X2-Y2" id="topPoints" class="layui-textarea"></textarea>
+                </div>
+            </div>
+
+            <div class="layui-form-item">
+                <div class="layui-input-block">
+                    <button class="layui-btn layui-btn-normal" type="button" lay-filter="demo2" style="width: 100%;" onclick="renderData('top')">渲染上层数据</button>
+                </div>
+            </div>
+
+            <div class="layui-form-item layui-form-text">
+                <label class="layui-form-label">下层数据</label>
+                <div class="layui-input-block">
+                    <textarea placeholder="输入格式 X1-Y1 X2-Y2" id="bottomPoints" class="layui-textarea"></textarea>
+                </div>
+            </div>
+
+            <div class="layui-form-item">
+                <div class="layui-input-block">
+                    <button class="layui-btn layui-btn-normal" type="button" lay-filter="demo2" style="width: 100%; margin-bottom: 50px;" onclick="renderData('bottom')">渲染下层数据</button>
+                </div>
+            </div>
+                    
+        </form>
+    </div>
+
+
+    <script src="./layui.all.js" charset="utf-8"></script>
+    <script src="./event.js"></script>
+    <script src="./canvas.js"></script>
+    <script>
+        var canvas = document.getElementById('canvas')
+        canvas.width = 860
+        canvas.height = 860
+        var context = canvas.getContext('2d')
+
+        // 数据
+        var topPoints = [
+            {x: 0, y: 200},
+            {x: 200, y: 400},
+            {x: 500, y: 300},
+            {x: 600, y: 100},
+            {x: 600, y: 0},
+        ]
+
+        var bottomPoints = [
+            {x: 600, y: 0},
+            {x: 600, y: 100},
+            {x: 0, y: 600},
+        ]
+
+        // 坐标轴相关设置
+        var axisLine = {
+            width: 2,
+            color: '#0080FF',
+            xText: 'X轴字体',
+            yText: 'Y轴字体',
+            showLineLabel: true
+        }
+
+        // 刻度线相关
+        var axisTick = {
+            xData: [0, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000],
+            yData: [0, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000],
+            color: axisLine.color,
+            width: 1,
+            height: 5,
+            showText: true
+        }
+
+        // 网格相关
+        var axisGrid = {
+            show: true,
+            color: '#e6e6e6',
+            width: 1
+        }
+
+        // 点相关
+        var axisPoint = {
+            color: axisLine.color,
+            width: 3
+        }
+        
+        // 绘制图表
+        function drawChart () {
+            if (axisGrid.show) {
+                drawGrid()
+            }
+            drawXY()
+            drawTick()
+            drawPoints()
+            drawAxisLineText()
+        }
+
+        // 重新渲染画布
+        function reRenderChart () {
+            context.clearRect(0, 0, 860, 860)
+
+            drawChart()
+        }
+
+        
+        // 绑定form事件
+        function setForm () {
+            layui.use(['form'], () => {
+                let form = layui.form
+
+                form.on('switch(gridSwitch)', function (data) {
+                    axisGrid.show = this.checked
+                    reRenderChart()
+                })
+
+                form.on('switch(tickSwitch)', function (data) {
+                    axisTick.showText = this.checked
+                    reRenderChart()
+                })
+
+                form.on('switch(lineLabelSwitch)', function (data) {
+                    axisLine.showLineLabel = this.checked
+                    reRenderChart()
+                })
+            })
+        }
+
+        setForm ()
+        drawChart()
+
+        function onLineLabelChange (sign) {
+            if (sign === 'x') {
+                axisLine.xText = document.getElementById('xLabel').value
+            } else {
+                axisLine.yText = document.getElementById('yLabel').value
+            }
+            reRenderChart()
+        }
+
+        function onChangeTick (sign) {
+            if (sign === 'x') {
+                let xTickMax = document.getElementById('x_tick_max').value
+                let xTickSplit = document.getElementById('x_tick_split').value
+                let xData = handleData(xTickMax, xTickSplit)
+                axisTick.xData = xData
+            } else {
+                let yTickMax = document.getElementById('y_tick_max').value
+                let yTickSplit = document.getElementById('y_tick_split').value
+                let yData = handleData(yTickMax, yTickSplit)
+                axisTick.yData = yData
+            }
+            reRenderChart()
+        }
+
+        function handleData (tickMax, tickSplit) {
+            // 1000 10 => [0, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]
+            const data = [0]
+            let current = 0
+            for (let i = 0; i < tickSplit; i++) {
+                current += tickMax/tickSplit
+                data.push(current)
+            }
+            console.log(data)
+            return data
+        }
+
+        function renderData (sign) {
+            let topPointString = document.getElementById('topPoints').value
+            let bottomPointString = document.getElementById('bottomPoints').value
+            if (sign === 'top') {
+                if (!topPointString) return
+                topPoints.splice(0, topPoints.length)
+                topPoints.push(...handlePointData(topPointString))
+            }
+
+            if (sign === 'bottom') {
+                if (!bottomPointString) return
+                bottomPoints.splice(0, bottomPoints.length)
+                bottomPoints.push(...handlePointData(bottomPointString))
+            }
+            
+            reRenderChart()
+        }
+
+        function handlePointData (data) {
+            data = data.split(' ')
+            const points = []
+            for (let i = 0; i < data.length; i++) {
+                const xyPoint = data[i].split('-')
+                points.push({x: xyPoint[0], y: xyPoint[1]})
+            }
+            return points
+        }
+
+        function onTickColorChange () {
+            axisTick.color = document.getElementById('tickColor').value
+            reRenderChart()
+        }
+
+        function onLineColorChange () {
+            axisLine.color = document.getElementById('lineColor').value
+            reRenderChart()
+        }
+
+        function onPointColorChange () {
+            axisPoint.color = document.getElementById('pointColor').value
+            reRenderChart()
+        }
+
+    </script>
+</body>
+</html>
