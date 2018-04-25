@@ -3,23 +3,25 @@
 
 
     
-    
   <url>
-    <loc>http://taroxin.github.io/post/hello-world/</loc>
-    <lastmod>2018-04-25T13:24:20.444Z</lastmod>
+    <loc>http://taroxin.github.io/Android/Android%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A1%E6%96%B0%E5%A7%BF%E5%8A%BFHermesEventBus/</loc>
+    <lastmod>2018-04-25T15:06:09.955Z</lastmod>
     <data>
         <display>
-        <title>Hello World</title>
-        <pubTime>2018-04-24T15:24:50.632Z</pubTime>
+        <title>Android进程间通信新姿势HermesEventBus</title>
+        <pubTime>2018-04-25T14:59:11.000Z</pubTime>
         
+        <tag>Android</tag>
+         
          
            
              
-              <breadCrumb title="post" url="http://taroxin.github.io/categories/post/"/>
+              <breadCrumb title="Android" url="http://taroxin.github.io/categories/Android/"/>
           
         </display>
     </data>
     </url>
 
+    
     
 </urlset>

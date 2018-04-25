@@ -3,7 +3,9 @@ Allow: /
 Allow: /archives/
 Allow: /tags/
 Allow: /categories/
-Allow: /post/
+Allow: /Android/
+Allow: /Web/
+Allow: /Javascript/
 
 Disallow: /vendors/
 Disallow: /js/
