@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[Hello World]]></title>
+    <url>%2Fpost%2Fhello-world%2F</url>
+    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. THis is test 点点滴滴 ddd d ddd d d d dd d d d d d d d d]]></content>
+      <categories>
+        <category>post</category>
+      </categories>
+  </entry>
+</search>
