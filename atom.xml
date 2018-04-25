@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://taroxin.github.io/"/>
-  <updated>2018-04-25T15:06:09.955Z</updated>
+  <updated>2018-04-25T15:43:03.129Z</updated>
   <id>http://taroxin.github.io/</id>
   
   <author>
@@ -15,6 +15,22 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>疯子在右》之中的我</title>
+    <link href="http://taroxin.github.io/post/%E7%96%AF%E5%AD%90%E5%9C%A8%E5%8F%B3%E3%80%8B%E4%B9%8B%E4%B8%AD%E7%9A%84%E6%88%91/"/>
+    <id>http://taroxin.github.io/post/疯子在右》之中的我/</id>
+    <published>2018-04-25T15:43:03.000Z</published>
+    <updated>2018-04-25T15:43:03.129Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="post" scheme="http://taroxin.github.io/categories/post/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>Android进程间通信新姿势HermesEventBus</title>
