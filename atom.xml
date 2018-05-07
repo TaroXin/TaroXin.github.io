@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>杨鑫的个人博客</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://taroxin.github.io/"/>
+  <updated>2018-04-26T15:00:53.780Z</updated>
+  <id>http://taroxin.github.io/</id>
+  
+  <author>
+    <name>杨鑫</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>《天才在左，疯子在右》之中的我，密闭空间</title>
+    <link href="http://taroxin.github.io/essay/%E3%80%8A%E5%A4%A9%E6%89%8D%E5%9C%A8%E5%B7%A6%EF%BC%8C%E7%96%AF%E5%AD%90%E5%9C%A8%E5%8F%B3%E3%80%8B%E4%B9%8B%E4%B8%AD%E7%9A%84%E6%88%91/"/>
+    <id>http://taroxin.github.io/essay/《天才在左，疯子在右》之中的我/</id>
+    <published>2018-04-25T15:43:03.000Z</published>
+    <updated>2018-04-26T15:00:53.780Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;情景介绍: 文中的“我”指的是笔者，文中的“他”则是指《天才在左，疯子在右》的作者，读完此书以后，也确实引起了很多的共鸣，试问谁能没有一点奇怪的想法呢，笔者在本文中将从“精神病人”的角度，也就是笔者自己的角度，去和此书的作者进行一次谈话，释放、吐露、勾勒出那个笔者心中的我&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&quot;正文&quot;&gt;&lt;a href=&quot;#正文&quot; class=&quot;headerlink&quot; title=&quot;正文&quot;&gt;&lt;/a&gt;正文&lt;/h4&gt;&lt;p&gt;门悄无声息的打开了，那个一直只存在于别人言语之间他出现在我面前，一个所谓的精神病人面前，和我想象的不太一样，他着着一身正装，不带眼镜，身材壮硕，孔武有力，手里面是那个标志般的笔记本与录音笔，他慢慢走过来坐在我面前的椅子上，看的出来他有点不太自然，或者说……紧张。&lt;/p&gt;
+&lt;p&gt;毕竟，一个正常的人是没办法面对一个不正常的人的，即使我的表现与气质是如此普通。&lt;/p&gt;
+&lt;p&gt;我向着他笑了笑，他似乎总是在躲闪我的视线，或许，人总是不敢去亲眼面对未知与诡异吧，虽然我自己不觉得有什么差别。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="essay" scheme="http://taroxin.github.io/categories/essay/"/>
+    
+    
+      <category term="随笔" scheme="http://taroxin.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+      <category term="读后感" scheme="http://taroxin.github.io/tags/%E8%AF%BB%E5%90%8E%E6%84%9F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Android进程间通信新姿势HermesEventBus</title>
+    <link href="http://taroxin.github.io/Android/Android%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A1%E6%96%B0%E5%A7%BF%E5%8A%BFHermesEventBus/"/>
+    <id>http://taroxin.github.io/Android/Android进程间通信新姿势HermesEventBus/</id>
+    <published>2018-04-25T14:59:11.000Z</published>
+    <updated>2018-04-25T15:06:09.955Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;先上一波效果图吸引注意力&quot;&gt;&lt;a href=&quot;#先上一波效果图吸引注意力&quot; class=&quot;headerlink&quot; title=&quot;先上一波效果图吸引注意力&quot;&gt;&lt;/a&gt;先上一波效果图吸引注意力&lt;/h2&gt;&lt;p&gt;友情提示： GIF 1.54M 小心流量乱跑哦！&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/4225893-e98ed8b1233bf8bf.gif?imageMogr2/auto-orient/strip&quot; alt=&quot;镇楼效果图&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Android" scheme="http://taroxin.github.io/categories/Android/"/>
+    
+    
+      <category term="Android" scheme="http://taroxin.github.io/tags/Android/"/>
+    
+  </entry>
+  
+</feed>
