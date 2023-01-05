@@ -1,0 +1,22 @@
+# 静态网站发布的配置文件
+publish:
+  - 
+    # github io 或者其他的地址
+    url: https://github.com/TaroXin/TaroXin.github.io
+    input: /dist
+    output: /test
+
+# git commit 相关的设置
+commit:
+  # 自动提交或者询问
+  type: auto
+  # 自动提交的 commit message
+  message: Auto commit by $n at $t
+
+# 在同步前执行
+before: 
+  - nr build
+
+# 在同步后执行
+after:
+  - echo "Finished"
